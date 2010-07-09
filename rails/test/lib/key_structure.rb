@@ -83,6 +83,7 @@ class KeyStructure
         rails/rails/active_record.yml
         rails/rails/active_support.yml
       )
+      I18n.load_path += Dir["rails/rails/active_model.yml"] if File.file?("rails/rails/active_model.yml")
       I18n.load_path += Dir["rails/locale/#{@locale}.{rb,yml}"]
       I18n.backend.init_translations
     end
